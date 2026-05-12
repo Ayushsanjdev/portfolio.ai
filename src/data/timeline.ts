@@ -1,32 +1,26 @@
 export const TIMELINE = [
   {
-    years: "2025 →",
-    role: "Founding Eng",
-    company: "Forma Studio",
-    desc: "Led WebGL rendering layer for 3D design tool used by 12k+ teams."
+    years: "2026 →",
+    role: "Software Engineer",
+    company: "Kraftbase",
+    desc: "Pixel-perfect UIs with GSAP, AI-driven EEG dashboard, Stripe escrow system, HLS.js video sync for clinical workflows."
   },
   {
-    years: "2023–25",
-    role: "Senior FE",
-    company: "Razorpay",
-    desc: "Built fintech dashboards, payment flows, design system (120 components)."
+    years: "2024–25",
+    role: "Frontend Developer",
+    company: "Mera Farmhouse",
+    desc: "Cross-platform React Native + Next.js agri-marketplace. Led App Store & Play Store releases — 100% on-time, 30% faster delivery."
   },
   {
-    years: "2022–23",
-    role: "Frontend Eng",
-    company: "Postman",
-    desc: "API client redesign, collaboration features, motion design direction."
+    years: "2021–24",
+    role: "Software Developer",
+    company: "Team Geek Solutions",
+    desc: "Storybook component library across 3 products, interview automation UI, 25% latency reduction via optimized API integrations."
   },
   {
-    years: "2021–22",
-    role: "Creative Dev",
-    company: "Stealth Startup",
-    desc: "Design tools for creators, WebGL experiments, interaction patterns."
-  },
-  {
-    years: "2020–21",
-    role: "Design Intern",
-    company: "BITS Pilani",
-    desc: "Self-taught frontend eng, first production React, Figma to code."
+    years: "2017–20",
+    role: "BA English Literature",
+    company: "Magadh University",
+    desc: "Foundation in analytical thinking, communication, and writing — the other half of good interface work."
   }
 ]

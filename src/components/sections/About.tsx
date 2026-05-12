@@ -1,4 +1,5 @@
 import React from 'react'
+
 const About: React.FC = () => {
   return (
     <section id="about" className="section">
@@ -12,27 +13,27 @@ const About: React.FC = () => {
         <div className="about" data-reveal>
           <div>
             <p>
-              Frontend engineer based in <em>Bangalore</em>, four years deep — split between shipping production React, scaling design systems, and breaking things in WebGL on weekends.
+              Frontend developer based in <em>Vadodara, Gujarat</em>, four years in — building production React and Next.js apps, shipping cross-platform mobile with React Native, and obsessing over the details that separate good UIs from great ones.
             </p>
             <p>
-              I obsess about the <em>millisecond</em> a button feels right. About the kerning of a numerical input. About the line where motion stops decorating and starts <em>communicating</em>.
+              I care deeply about the <em>millisecond</em> an interface responds. About the gap between what a designer intended and what a developer shipped. About closing that gap to <em>zero</em>.
             </p>
             <p>
-              Currently building tools that make engineers feel like designers, and designers feel like engineers.
+              Currently engineering medical dashboards and payment systems at Kraftbase — the kind of work where a rendering glitch isn&apos;t just ugly, it costs someone.
             </p>
           </div>
           <div className="about-card">
             <h4>{'// Stats'}</h4>
             <dl className="kv">
-              <dt>Based</dt><dd>Bangalore, IN</dd>
+              <dt>Based</dt><dd>Vadodara, Gujarat</dd>
               <dt>Years</dt><dd>4 (since 2021)</dd>
-              <dt>Stack</dt><dd>TS · React · Three · Node</dd>
-              <dt>Available</dt><dd className="text-c-cobalt">Aug 2026 →</dd>
-              <dt>Type</dt><dd>FT · Contract · Advisory</dd>
+              <dt>Stack</dt><dd>TS · React · Next · RN</dd>
+              <dt>Available</dt><dd className="text-c-cobalt">Open to work →</dd>
+              <dt>Type</dt><dd>FT · Contract · Remote</dd>
               <dt>Refs</dt><dd>on request</dd>
             </dl>
             <div className="about-note">
-              Previously at Razorpay, Postman, and a stealth design tools co.
+              Previously at Team Geek Solutions Pvt Ltd and Mera Farmhouse.
             </div>
           </div>
         </div>

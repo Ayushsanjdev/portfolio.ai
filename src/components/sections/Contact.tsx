@@ -3,6 +3,8 @@
 import React from 'react'
 import Magnetic from '@/components/primitives/Magnetic'
 
+const CONTACT_EMAIL = 'ayushsanjpro@gmail.com'
+
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="section">
@@ -16,23 +18,25 @@ const Contact: React.FC = () => {
 
           <div className="right">
             <p className="lead">
-              Interested in collaboration, mentoring, or just geeking out about motion design? Get in touch.
+              Interested in working together, have a project in mind, or just want to talk frontend? I&apos;m always up for a good conversation.
             </p>
 
-            <Magnetic strength={0.4} as="a" href="mailto:hi@ayush.dev" className="contact-cta" data-cursor="Email">
-              hi@ayush.dev <span className="arr">→</span>
+            <Magnetic strength={0.4} as="a" href={`mailto:${CONTACT_EMAIL}`} className="contact-cta" data-cursor="Email">
+              {CONTACT_EMAIL} <span className="arr">→</span>
             </Magnetic>
 
             <div className="contact-links">
               {[
-                { label: 'Twitter', href: '#' },
-                { label: 'GitHub', href: '#' },
-                { label: 'LinkedIn', href: '#' },
-                { label: 'Dribbble', href: '#' },
-                { label: 'Email', href: 'mailto:hi@ayush.dev' },
-                { label: 'CV', href: '#cv' }
+                { label: 'Twitter', href: 'https://twitter.com/ayushsanj' },
+                { label: 'GitHub', href: 'https://github.com/ayushsanjdev' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/in/ayushsanj' },
+                { label: 'Email', href: `mailto:${CONTACT_EMAIL}` },
+                { label: 'Resume', href: '/AYUSHSANJ_FE_2026_CV.pdf' },
+                { label: 'Phone', href: 'tel:+918595720727' },
               ].map((link, i) => (
-                <a key={i} href={link.href}>{link.label}</a>
+                <a key={i} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                  {link.label}
+                </a>
               ))}
             </div>
           </div>

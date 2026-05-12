@@ -1,59 +1,75 @@
+'use client'
 import React from 'react'
 import HeroShader from './HeroShader'
+import { useTweaks } from '@/hooks/useTweaks'
 
 const HERO_PALETTE = {
   c1: [0.254, 0.16, 0.98], // cobalt
-  c2: [0.7, 1, 0.15], // lime
-  c3: [1, 0.24, 0.08], // coral
-  c4: [0.95, 0.92, 0.85] // cream
+  c2: [0.7, 1, 0.15],       // lime
+  c3: [1, 0.24, 0.08],      // coral
+  c4: [0.95, 0.92, 0.85]    // cream
 }
 
 const Hero: React.FC = () => {
+  const heroVariant = useTweaks((s) => s.heroVariant)
+
   return (
     <section className="hero">
-      <HeroShader palette={HERO_PALETTE} intensity={1} variant="warp" />
-      <div className="hero-grain"></div>
-      <div className="hero-overlay"></div>
+      <HeroShader palette={HERO_PALETTE} intensity={1} variant={heroVariant} />
+      <div className="hero-grain" aria-hidden="true"></div>
+      <div className="hero-overlay" aria-hidden="true"></div>
       <div className="hero-inner">
-        <div className="hero-meta">
+        <div className="hero-meta" aria-label="Portfolio metadata">
           <div className="col">
             <div className="val">{'// Portfolio · v3.4'}</div>
           </div>
           <div className="col right">
             <div className="val">
-              <span className="desktop-copy">{'// 12.97°N · 77.59°E · BANGALORE, IN'}</span>
-              <span className="mobile-copy">{'// BANGALORE · IN'}</span>
+              <span className="desktop-copy">{'// 22.30°N · 73.18°E · VADODARA, IN'}</span>
+              <span className="mobile-copy">{'// VADODARA · IN'}</span>
             </div>
           </div>
           <div className="col right">
             <div className="val">
-              <span className="desktop-copy">{'// Status · ↗ Booking Aug \'26'}</span>
-              <span className="mobile-copy">{'// Booking Aug \'26'}</span>
+              <span className="desktop-copy">{"// Status · ↗ Booking Aug '26"}</span>
+              <span className="mobile-copy">{"// Booking Aug '26"}</span>
             </div>
           </div>
         </div>
+
         <h1 className="hero-title">
           <span className="ln">AYUSH</span>
           <span className="ln"><span className="it accent">Sanj.</span></span>
           <span className="ln stroke">Frontend</span>
-          <span className="ln"><span className="it">Engineer</span><span className="star">*</span></span>
+          <span className="ln"><span className="it">Developer</span><span className="star">*</span></span>
         </h1>
-        <div className="hero-roles">
+
+        <div className="hero-roles" aria-label="Specialisations">
           <span className="role-pill">React · TS</span>
           <span className="role-pill">WebGL</span>
           <span className="role-pill solid">Design Eng</span>
           <span className="role-pill">Node · Edge</span>
-          <span className="arrow">→</span>
+          <span className="arrow" aria-hidden="true">→</span>
         </div>
-        <div className="hero-marquee">
+
+        <div className="hero-marquee" aria-hidden="true">
           <div className="track">
-            <span>Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗</span>
-            <span>Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗ Available August 2026 ↗</span>
+            <span>
+              Available August 2026 ↗ &nbsp;&nbsp; Available August 2026 ↗ &nbsp;&nbsp;
+              Available August 2026 ↗ &nbsp;&nbsp; Available August 2026 ↗ &nbsp;&nbsp;
+              Available August 2026 ↗ &nbsp;&nbsp;
+            </span>
+            <span>
+              Available August 2026 ↗ &nbsp;&nbsp; Available August 2026 ↗ &nbsp;&nbsp;
+              Available August 2026 ↗ &nbsp;&nbsp; Available August 2026 ↗ &nbsp;&nbsp;
+              Available August 2026 ↗ &nbsp;&nbsp;
+            </span>
           </div>
         </div>
       </div>
-      <div className="scroll-cue">
-        SCROLL <span className="arr">↘</span>
+
+      <div className="scroll-cue" aria-hidden="true">
+        SCROLL <span className="arr"></span>
       </div>
     </section>
   )

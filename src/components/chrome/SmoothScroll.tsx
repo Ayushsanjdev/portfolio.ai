@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useEffect } from 'react'
 import type Lenis from 'lenis'
 
@@ -14,10 +13,14 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
     let cancelled = false
 
     const setupSmoothScroll = async () => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
       if (reduceMotion) return
 
-      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
+      // Wait for the page-load curtain to finish (4 panels × 80ms stagger + 900ms transition)
+      await new Promise<void>((resolve) => setTimeout(resolve, 1200))
+      if (cancelled) return
+
+      const [{ default: LenisClass }, { gsap }, { ScrollTrigger }] = await Promise.all([
         import('lenis'),
         import('gsap'),
         import('gsap/ScrollTrigger'),
@@ -26,7 +29,7 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       if (cancelled) return
 
       gsap.registerPlugin(ScrollTrigger)
-      lenis = new Lenis({
+      lenis = new LenisClass({
         duration: 1.05,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
@@ -43,18 +46,22 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       rafId = requestAnimationFrame(raf)
     }
 
-    const revealEls = document.querySelectorAll("[data-reveal]")
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in")
-          revealObserver.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" })
+    // Set up scroll reveals via IntersectionObserver
+    const revealEls = document.querySelectorAll('[data-reveal]')
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in')
+            revealObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    )
 
     revealEls.forEach((el, index) => {
-      ;(el as HTMLElement).style.setProperty("--rd", `${Math.min(index % 4, 3) * 70}ms`)
+      ;(el as HTMLElement).style.setProperty('--rd', `${Math.min(index % 4, 3) * 70}ms`)
       revealObserver.observe(el)
     })
 

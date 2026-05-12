@@ -1,36 +1,36 @@
 export const SKILLS = [
-  { name: "TypeScript", lvl: 0.95 },
-  { name: "React / Next", lvl: 0.95 },
-  { name: "Three.js", lvl: 0.85 },
-  { name: "GLSL", lvl: 0.7 },
-  { name: "GSAP", lvl: 0.9 },
-  { name: "Framer Motion", lvl: 0.88 },
-  { name: "Node / Edge", lvl: 0.78 },
-  { name: "Figma", lvl: 0.86 },
-  { name: "Design Systems", lvl: 0.92 },
-  { name: "A11y / WCAG", lvl: 0.85 },
-  { name: "Perf / Lighthouse", lvl: 0.9 },
-  { name: "Storybook", lvl: 0.85 },
-  { name: "Webpack / Vite", lvl: 0.75 },
-  { name: "Playwright", lvl: 0.7 },
-  { name: "Postgres", lvl: 0.6 },
+  { name: "TypeScript", lvl: 0.88 },
+  { name: "React / Next.js", lvl: 0.92 },
+  { name: "React Native", lvl: 0.75 },
+  { name: "JavaScript", lvl: 0.90 },
+  { name: "Tailwind CSS", lvl: 0.90 },
+  { name: "Zustand", lvl: 0.85 },
+  { name: "React Query", lvl: 0.82 },
+  { name: "Redux Toolkit", lvl: 0.78 },
+  { name: "GSAP", lvl: 0.80 },
+  { name: "Framer", lvl: 0.75 },
+  { name: "Material-UI", lvl: 0.80 },
+  { name: "Storybook", lvl: 0.82 },
+  { name: "Jest", lvl: 0.72 },
+  { name: "Vite", lvl: 0.80 },
+  { name: "Git", lvl: 0.88 },
 ]
 
 export const SKILL_CATEGORIES = [
   {
     title: "Frontend",
-    skills: ["React 19, Next.js 15", "TypeScript (strict)", "Server Components", "Tailwind, CSS-in-JS"]
+    skills: ["React.js, Next.js", "TypeScript, JavaScript", "React Native", "Tailwind CSS, MUI"]
   },
   {
-    title: "Motion & 3D",
-    skills: ["Three.js, R3F", "GLSL fragment shaders", "GSAP, Framer Motion", "Lottie, Rive"]
+    title: "State & Data",
+    skills: ["Zustand, Redux Toolkit", "React Query", "REST APIs", "Optimistic UI patterns"]
   },
   {
-    title: "Systems",
-    skills: ["Component libraries", "Design tokens (W3C)", "Storybook, Chromatic", "Headless UI patterns"]
+    title: "Motion & Build",
+    skills: ["GSAP, Framer", "CSS animations", "Vite, Webpack", "Performance tuning"]
   },
   {
-    title: "Backend-ish",
-    skills: ["Node, tRPC, GraphQL", "Cloudflare Workers", "Postgres, Drizzle", "Edge auth (Clerk)"]
+    title: "Tools & Testing",
+    skills: ["Jest, unit testing", "Storybook, Chromatic", "Git, CI/CD", "App Store releases"]
   }
 ]
